@@ -11,7 +11,7 @@ class AdsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(minHeight: 190,),
+      constraints: const BoxConstraints(minHeight: 190,),
       child: CarouselSlider.builder(
         itemCount: 3,
         options: CarouselOptions(

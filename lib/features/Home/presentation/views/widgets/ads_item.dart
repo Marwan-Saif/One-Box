@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:one_box/core/utils/app_colors.dart';
 import 'package:one_box/core/utils/app_images.dart';

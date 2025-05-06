@@ -6,16 +6,19 @@ class CustomDropdown extends StatelessWidget {
   final String label, hint;
   final List<String> items;
   final bool required;
+  final Function(String?)? chosenValue;
 
-  CustomDropdown(
+  const CustomDropdown(
       {required this.label,
       required this.items,
       required this.hint,
-      this.required = false});
+      this.required = false,
+      this.chosenValue});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text.rich(
@@ -36,8 +39,8 @@ class CustomDropdown extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color: Colors.white,
-            boxShadow: [
-              const BoxShadow(
+            boxShadow: const [
+              BoxShadow(
                 color: Colors.grey,
                 blurRadius: 5,
                 spreadRadius: 0,
@@ -46,11 +49,18 @@ class CustomDropdown extends StatelessWidget {
             ],
           ),
           child: DropdownButtonFormField<String>(
-            
+            validator: (value) {
+              if (required && value == null) {
+                return 'This field is required';
+              }
+              return null;
+            },
             items: items.map((item) {
               return DropdownMenuItem(value: item, child: Text(item));
             }).toList(),
-            onChanged: (value) {},
+            onChanged: (value) {
+              chosenValue!(value);
+            },
             decoration: InputDecoration(
               alignLabelWithHint: true,
               hintText: hint,

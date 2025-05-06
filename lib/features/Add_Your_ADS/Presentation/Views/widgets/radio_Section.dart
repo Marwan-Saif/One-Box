@@ -1,19 +1,26 @@
-
 import 'package:flutter/material.dart';
 
 class radio_section extends StatefulWidget {
   radio_section({
     super.key,
     required this.callBack,
+    this.value = "سعر ثابت",
   });
-  final void Function(String value) callBack;
+  final ValueChanged<String> callBack;
+  final String value;
 
   @override
   State<radio_section> createState() => _radio_sectionState();
 }
 
 class _radio_sectionState extends State<radio_section> {
-  String groupValue = "سعر ثابت";
+  late String groupValue;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    groupValue = widget.value;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +36,9 @@ class _radio_sectionState extends State<radio_section> {
                   onChanged: (x) {
                     groupValue = x!;
                     setState(() {});
-                    // callBack(title);
+                    widget.callBack('groupValue');
                   }),
-              Text("سعر ثابت"),
+              const Text("سعر ثابت"),
             ],
           ),
         ),
@@ -45,8 +52,9 @@ class _radio_sectionState extends State<radio_section> {
                   groupValue = x!;
                   setState(() {});
                   // callBack(title);
+                  widget.callBack("groupValue");
                 }),
-            Text('مزايدة'),
+            const Text('مزايدة'),
           ],
         ),
       ],

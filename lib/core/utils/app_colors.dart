@@ -5,13 +5,13 @@ abstract class AppColors {
   static const Color lightPrimaryColor = Color(0xFF2D9F5D);
   static const Color secondaryColor = Color(0xFFF4A91F);
   static const Color lightSecondaryColor = Color(0xFFF8C76D);
-  static const Color gradiant1= Color(0xFFE6EBFE);
-  static const Color gradiant2= Color(0xFFE1E7FC);
-  static const Color gradiant3= Color(0xFF809FDC);
-  static const Color gradiant4= Color(0xFF1750B9);
+  static const Color gradiant1 = Color(0xFFE6EBFE);
+  static const Color gradiant2 = Color(0xFFE1E7FC);
+  static const Color gradiant3 = Color(0xFF809FDC);
+  static const Color gradiant4 = Color(0xFF1750B9);
 
-    static   LinearGradient gradient() {
-    return LinearGradient(
+  static LinearGradient gradient() {
+    return const LinearGradient(
       begin: AlignmentDirectional.centerEnd,
       end: AlignmentDirectional.centerStart,
       colors: [
@@ -20,7 +20,6 @@ abstract class AppColors {
         AppColors.gradiant3,
         AppColors.gradiant4,
       ],
-    
     );
   }
 }  

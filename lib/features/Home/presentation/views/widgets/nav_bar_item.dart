@@ -1,17 +1,16 @@
-
 import 'package:flutter/material.dart';
-import 'package:one_box/core/utils/app_images.dart';
 
 class BottomNavItem extends StatelessWidget {
   const BottomNavItem({
     super.key,
     required this.image,
     required this.title,
-    required this.activeColor,  this.active = false,
+    required this.activeColor,
+    this.active = false,
   });
   final String image, title;
   final Color activeColor;
-  final bool active ;
+  final bool active;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +26,15 @@ class BottomNavItem extends StatelessWidget {
             flex: 2,
             child: Image.asset(
               image,
-              color: active ? Colors.white :null,
+              color: active ? Colors.white : null,
             )),
-         Expanded(flex: 1, child: Text(title,style: TextStyle(color: active ? Colors.white :null),)),
+        Expanded(
+            flex: 1,
+            child: FittedBox(
+                child: Text(
+              title,
+              style: TextStyle(color: active ? Colors.white : null),
+            ))),
         const SizedBox(height: 5),
       ]),
     );

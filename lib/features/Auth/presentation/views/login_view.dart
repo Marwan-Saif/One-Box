@@ -9,8 +9,8 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(Assets.imagesLogin))),
+      decoration: const BoxDecoration(
+          image: DecorationImage(image: const AssetImage(Assets.imagesLogin), fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Padding(

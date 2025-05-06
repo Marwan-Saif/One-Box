@@ -33,8 +33,8 @@ class _SplashViewState extends State<SplashView> {
               AppColors.gradiant3,
               AppColors.gradiant4,
             ],
-            begin: Alignment.topLeft, 
-            end: Alignment.bottomRight, 
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
         ),
         child: Center(
