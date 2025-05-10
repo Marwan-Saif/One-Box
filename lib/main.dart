@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:one_box/core/helper_functions/app_router.dart';
+import 'package:one_box/core/services/api_services.dart';
+import 'package:one_box/core/services/getit_service.dart';
 import 'package:one_box/generated/l10n.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  setUpServiceLocator();
+  ApiService.init();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]).then((_) {
