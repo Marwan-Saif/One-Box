@@ -18,7 +18,7 @@ class ApiService {
   }
 
   /// **GET Request**
-  Future<Response?> getData({
+  Future<Response> getData({
     required String endpoint,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,

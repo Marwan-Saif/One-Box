@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:one_box/core/errors/failures.dart';
 import 'package:one_box/core/services/api_services.dart';
@@ -36,6 +38,7 @@ class AuthRepoImpl extends AuthRepo {
       Response response = await apiService.postData(
           endpoint: EndPoints.verifyOTP,
           data: {"value": emailOrMobile, "otp": otp});
+      log(" repo impl verify otp response is " + response.data.toString());
       return right(VerifyOtpRespons.fromJson(response.data));
     } on Exception catch (e) {
       if (e is DioException) {

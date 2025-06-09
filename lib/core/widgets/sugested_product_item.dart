@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:one_box/core/utils/app_images.dart';
+import 'package:one_box/core/utils/scaler.dart';
 
 class SugestedProductItem extends StatelessWidget {
   const SugestedProductItem({
@@ -27,7 +27,7 @@ class SugestedProductItem extends StatelessWidget {
           ),
         ],
       ),
-      width: 180,
+      width: scaleValue(context, 160, type: "w"),
       // color: Color(0xffEBF0FE),
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
@@ -107,7 +107,8 @@ class SugestedProductItem extends StatelessWidget {
                     ),
                     SizedBox(width: 5),
                     Text(
-                      'اشتري الان',
+                      'مزايدتك الان',
+                      maxLines: 2,
                       style: TextStyle(
                           fontSize: 10,
                           color: Colors.white,

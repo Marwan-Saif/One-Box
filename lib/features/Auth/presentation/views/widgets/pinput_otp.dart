@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:one_box/core/helper_functions/app_router.dart';
 import 'package:one_box/features/Auth/presentation/manager/auth_cubit.dart';
 import 'package:pinput/pinput.dart';
 
@@ -53,6 +55,7 @@ class PinPut extends StatelessWidget {
       ),
       onCompleted: (pin) {
         cubit.verifyOTP();
+        // context.go(AppRouter.masterScreen);
         // context.pushReplacement(AppRouter.forgetPassword);
       },
     );

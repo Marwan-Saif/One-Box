@@ -106,8 +106,6 @@ class LoginViewBody extends StatelessWidget {
               if (formKey.currentState!.validate()) {
                 cubit.sendOTP(controller.text, context);
               }
-
-              // context.go(AppRouter.otpScreen);
             },
             child: Container(
               padding: EdgeInsets.symmetric(

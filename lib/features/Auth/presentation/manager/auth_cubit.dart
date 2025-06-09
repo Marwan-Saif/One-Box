@@ -41,11 +41,14 @@ class AuthCubit extends Cubit<AuthState> {
     emit(VerifyOTPLoading());
     final result = await authrepo.verifyOTP(emailORMobile!, otp!);
     result.fold(
-      (l) => emit(VerifyOTPError(l.errMessage)),
+      (l) {
+        emit(VerifyOTPError(l.errMessage));
+        log(l.errMessage);
+      },
       (r) {
         //**save token */
-        kToken = r.token!;
-        token = r.token!;
+        token = "Bearer ${r.token!}";
+        kToken = "Bearer ${r.token!}";
         SecureStorageService.writeData(
           key: PrefsKeys.authToken,
           value: r.token!,

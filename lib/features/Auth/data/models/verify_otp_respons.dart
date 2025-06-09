@@ -8,9 +8,8 @@ class VerifyOtpRespons {
   VerifyOtpRespons.fromJson(Map<String, dynamic> json) {
     message = json['message'];
     token = json['token'];
-    customer = json['customer'] != null
-        ? new Customer.fromJson(json['customer'])
-        : null;
+    customer =
+        json['customer'] != null ? Customer.fromJson(json['customer']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -26,19 +25,19 @@ class VerifyOtpRespons {
 
 class Customer {
   int? id;
-  Null? name;
-  Null? email;
+  String? name;
+  String? email;
   String? phone;
   Null? otp;
-  Null? gender;
-  Null? birthday;
-  Null? address;
+  String? gender;
+  String? birthday;
+  String? address;
   Null? zip;
-  Null? notes;
-  Null? deletedAt;
+  String? notes;
+  String? deletedAt;
   String? createdAt;
   String? updatedAt;
-  Null? image;
+  String? image;
 
   Customer(
       {this.id,
